@@ -31,7 +31,7 @@ ruristart() {
             START_SERVICES="service ssh start"
             ;;
         alpine)
-            START_SERVICES="rc-service sshd restart"
+            START_SERVICES="openrc"
             ;;
         *)
             START_SERVICES=""
@@ -43,7 +43,7 @@ ruristart() {
         mount -o remount,suid $CONTAINER_DIR
     fi
 
-    ARGS="-w"
+    ARGS="-w -p -S"
 
     if [ -n "$MOUNT_POINT" ] && [ -n "$MOUNT_ENTRANCE" ]; then
         if [ "$MOUNT_READ_ONLY" = "true" ]; then
