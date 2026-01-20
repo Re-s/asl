@@ -31,7 +31,7 @@ ruristart() {
             START_SERVICES="service ssh start"
             ;;
         alpine)
-            START_SERVICES="openrc"
+            START_SERVICES="rm -rf /run/openrc/started/* |true && openrc"
             ;;
         *)
             START_SERVICES=""
