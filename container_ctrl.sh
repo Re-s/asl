@@ -43,7 +43,7 @@ ruristart() {
         mount -o remount,suid $CONTAINER_DIR
     fi
 
-    ARGS="-w -p -S"
+    ARGS="-w"
 
     if [ -n "$MOUNT_POINT" ] && [ -n "$MOUNT_ENTRANCE" ]; then
         if [ "$MOUNT_READ_ONLY" = "true" ]; then
