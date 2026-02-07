@@ -1,5 +1,6 @@
 #!/bin/sh
 HERE=${0%/*}
+export PATH=$PATH:$HERE/xbin
 . "$HERE/config.conf"
 exec > "$HERE/run.log" 2>&1
 if [ ! -e "$CONTAINER_DIR/etc/os-release" ]; then
